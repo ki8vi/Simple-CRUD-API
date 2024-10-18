@@ -5,8 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start:dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
-    "start:prod": "webpack && node dist/start.js",
-    "lint": "eslint"
+    "start:prod": "webpack && node dist/start.js"
   },
   "keywords": [],
   "author": "ki8vi",
@@ -14,7 +13,8 @@
   "devDependencies": {
     "@types/node": "^22.7.6",
     "@types/webpack": "^5.28.5",
-     "cross-env": "^7.0.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.1.7",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
