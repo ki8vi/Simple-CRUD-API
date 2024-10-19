@@ -1,10 +1,15 @@
-import { cpus } from 'os';
-import http from 'http'
+import 'dotenv/config';
+import { start } from './startServer';
+const { PORT } = process.env;
 
-const server = http.createServer((req, res) => {
+if(!PORT) {
+    console.error('PORT not found!');
+} else {
+    if (!Number.isNaN(+PORT)) {
+        start(+PORT);
+    } else {
+        console.error('PORT value must be a number.');
+    }
+}
 
-})
-console.log(cpus().length)
-console.log('hello it workssdf')
-const aasd = 3;
-console.log(aasd);
+

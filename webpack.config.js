@@ -11,7 +11,7 @@ module.exports = {
     filename: 'start.js',
   },
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: ['.ts', '.js'],
   },
   externals: [nodeExternals()],
   module: {
