@@ -2,10 +2,18 @@ import { User } from "../types/user";
 import { v4 as idGenerator } from 'uuid';
 
 export class UsersData {
+    static instanceSingletone: UsersData;
     private users: User[];
 
     constructor() {
         this.users = []; 
+    }
+
+    static getInstance(): UsersData {
+        if (!UsersData.instanceSingletone) {
+            UsersData.instanceSingletone = new UsersData();
+        }
+        return UsersData.instanceSingletone;
     }
 
     async getUsers(): Promise<User[]> {
@@ -46,5 +54,9 @@ export class UsersData {
         }
         this.users.splice(userIndex, 1);
         return Promise.resolve(true);
+    }
+
+    resetUsers() {
+        this.users = [];
     }
 }

@@ -1,11 +1,8 @@
 import request from 'supertest';
-import start from '../startServer';
-import 'dotenv/config';
-import { User } from '../types/user';
 import { Server } from 'node:http';
+import { User } from '../types/user';
 import { CONSTANTS } from '../constants/constants';
-
-const { PORT = 3000 } = process.env;
+import start from '../startServer';
 
 describe('User behavior one, testing server', () => {
     const newUserTest: Omit<User, 'id'> = { 
@@ -17,7 +14,7 @@ describe('User behavior one, testing server', () => {
     let userId: string = '';
 
     beforeAll((done) => {
-        myServer = start(Number(PORT));
+        myServer = start(Number(1000));
         done();
     });
 

@@ -5,7 +5,7 @@ import { Methods } from "../types/methods";
 import sendResp from "../helpers/sendResp";
 import { validate as idValidateUUID } from "uuid";
 
-const users = new UsersData();
+const users = UsersData.getInstance();
 
 export const endpointHandler = async (req: IncomingMessage, res: ServerResponse) => {
     const { url, method } = req;
