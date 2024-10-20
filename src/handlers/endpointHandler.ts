@@ -44,7 +44,7 @@ export const endpointHandler = async (req: IncomingMessage, res: ServerResponse)
                         try {
                             const { username, age, hobbies } = JSON.parse(reqBody);
                             if (!username || typeof age !== 'number' || !Array.isArray(hobbies)) {
-                                sendResp(res, CONSTANTS.CODE_400, 'Missing required fields');
+                                sendResp(res, CONSTANTS.CODE_400,'Missing required fields');
                                 return;
                             }
                             const newUser = await users.createUser(username, age, hobbies);
