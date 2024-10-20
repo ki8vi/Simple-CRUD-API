@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { start } from './startServer';
+import start from './startServer';
 const { PORT } = process.env;
 
 if(!PORT) {
