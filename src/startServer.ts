@@ -7,9 +7,4 @@ const start = (port: number) => {
   }).listen(port, () => console.log(`Listening port: ${port}`))
 };
 
-export default start
-
-
-
-
-
+export default start;
