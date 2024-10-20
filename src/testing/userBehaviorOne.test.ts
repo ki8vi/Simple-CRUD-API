@@ -4,7 +4,7 @@ import { User } from '../types/user';
 import { CONSTANTS } from '../constants/constants';
 import start from '../startServer';
 
-describe('User behavior one, testing server', () => {
+describe('User behavior one, testing server for crud', () => {
     const newUserTest: Omit<User, 'id'> = { 
         username: 'Billy', 
         age: 56, 
@@ -14,7 +14,7 @@ describe('User behavior one, testing server', () => {
     let userId: string = '';
 
     beforeAll((done) => {
-        myServer = start(Number(1000));
+        myServer = start(Number(3000));
         done();
     });
 
