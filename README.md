@@ -45,8 +45,8 @@ This repository contains a simple CRUD API implemented in TypeScript and NodeJS.
 ``{
   "username": "string",
   "age": "number",
-  "hobbies" = string["one", "two", "three"] -> Format: JSON
-}``
+  "hobbies" = string["one", "two", "three"]
+}`` -> Format: JSON
 
 - Response:
    - Status 201 with the newly created user.
