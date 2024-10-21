@@ -5,7 +5,6 @@ import { Methods } from "../types/methods";
 import sendResp from "../helpers/sendResp";
 import { validate as idValidateUUID } from "uuid";
 
-import { syncUsersWithWorkers } from '../startCluster'
 import { isMultiMode } from "../helpers/argvParser";
 
 
@@ -52,7 +51,6 @@ export const endpointHandler = async (req: IncomingMessage, res: ServerResponse)
                                 return;
                             }
                             const newUser = await users.createUser(username, age, hobbies);
-                            if(isMultiMode()) await syncUsersWithWorkers();
                             sendResp(res, CONSTANTS.CODE_201, newUser);
                         } catch {
                             sendResp(res, CONSTANTS.CODE_400, 'JSON invalid');
@@ -78,7 +76,6 @@ export const endpointHandler = async (req: IncomingMessage, res: ServerResponse)
                             try {
                                 const updatedData = JSON.parse(reqBody);
                                 const updatedUser = await users.updateUser(userId, updatedData);
-                                if(isMultiMode()) await syncUsersWithWorkers();
                                 const { username, age, hobbies } = JSON.parse(reqBody);
                                 if (!username || typeof age !== 'number' || !Array.isArray(hobbies)) {
                                     sendResp(res, CONSTANTS.CODE_400, 'Missing required fields');
@@ -105,7 +102,6 @@ export const endpointHandler = async (req: IncomingMessage, res: ServerResponse)
                         }
     
                         const isRemoved = await users.deleteUser(userId);
-                        if(isMultiMode()) await syncUsersWithWorkers();
                         if (!isRemoved) {
                             sendResp(res, CONSTANTS.CODE_404, 'User not found!');
                         } else {
