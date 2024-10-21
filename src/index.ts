@@ -10,6 +10,6 @@ if(!PORT) {
     } else {
         console.error('PORT value must be a number.');
     }
-}
+};
 
 

@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "Node16",
+    "target": "ES6",
+    "module": "CommonJS",
     "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "moduleResolution": "Node16",
-    "skipLibCheck": true
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
   },
-  "include": ["src"],
+  "ts-node": {
+    // "compilerOptions": {
+    //   "module": "Node16",
+    //   "target": "ES2016"
+    // }
+  },
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

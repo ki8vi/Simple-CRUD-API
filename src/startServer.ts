@@ -1,4 +1,4 @@
-import { createServer, IncomingMessage, ServerResponse } from 'node:http';
+import { createServer } from 'node:http';
 import { endpointHandler } from './handlers/endpointHandler';
 
 const start = (port: number) => {

@@ -1,6 +1,7 @@
 import { User } from "../types/user";
 import { v4 as idGenerator } from 'uuid';
 
+
 export class UsersData {
     static instanceSingletone: UsersData;
     private users: User[];
