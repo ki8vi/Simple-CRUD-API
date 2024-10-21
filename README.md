@@ -20,7 +20,7 @@ This repository contains a simple CRUD API implemented in TypeScript and NodeJS.
 ### Clone the repository:
 
  - git clone <repository-url>
- - switch to ```develop``` branch
+ - switch to ```dev``` branch
 ### Install dependencies:
 ```npm install```
 ### To start the server in development mode, run:
@@ -36,31 +36,31 @@ This repository contains a simple CRUD API implemented in TypeScript and NodeJS.
 - Get User by ID
    - Request: GET /api/users/{userId}
 - Response:
- - Status 200 with user data if found.
- - Status 400 if userId is invalid.
- - Status 404 if user not found.
+   - Status 200 with user data if found.
+   - Status 400 if userId is invalid.
+   - Status 404 if user not found.
 - Create User
- - Request: POST /api/users
- - Body:
+   - Request: POST /api/users
+   - Body:
 ``{
   "username": "string",
   "age": "number",
-  "hobbies": ["string"]
+  "hobbies" = string["one", "two", "three"] -> Format: JSON
 }``
 
 - Response:
- - Status 201 with the newly created user.
- - Status 400 if required fields are missing.
+   - Status 201 with the newly created user.
+   - Status 400 if required fields are missing.
 - Update User
- - Request: PUT /api/users/{userId}
- - Body: Same structure as for creating a user.
+   - Request: PUT /api/users/{userId}
+   - Body: Same structure as for creating a user.
 - Response:
- - Status 200 with updated user data if successful.
- - Status 400 if userId is invalid.
- - Status 404 if user not found.
+   - Status 200 with updated user data if successful.
+   - Status 400 if userId is invalid.
+   - Status 404 if user not found.
 - Delete User
- - Request: DELETE /api/users/{userId}
- - Response:
+   - Request: DELETE /api/users/{userId}
+- Response:
   - Status 204 if deleted successfully.
   - Status 400 if userId is invalid.
   - Status 404 if user not found.
@@ -68,6 +68,7 @@ This repository contains a simple CRUD API implemented in TypeScript and NodeJS.
   - Any requests to non-existing endpoints will return a 404 status with a friendly message.
 
 
-### Testing (3 scenarios of user behavior: basic CRUD operations tests suite,  errors tests suite, unexpected requests amount and etc tests suite)
+### Testing 
+There 3 scenarios of user behavior: basic CRUD operations tests suite,  errors tests suite, unexpected requests amount and etc tests suite
 - For run tests ```npm run test```
 
